@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Eina01-Bold";
+    src: url(./font/Eina01-Bold.ttf);
+}
+h1{
+    font-family: "Eina01-Bold", sans-serif;
+}

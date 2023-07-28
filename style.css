@@ -18,6 +18,10 @@
 }
 /****************** css reset ******************/
 
+body {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -55,6 +59,8 @@ header {
 
 .main {
   margin-top: 30px;
+  height: 500px;
+  position: relative;
 }
 
 /******** slider div section css ********/
@@ -86,11 +92,14 @@ header {
 /******** slider button section css ********/
 
 .slide-btn-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 30px;
+  background-color: white;
+  padding: 0 120px;
 }
 
 .slide-btn span {
@@ -145,11 +154,55 @@ header {
   color: #333;
 }
 
+.main-section-left-side-design {
+  width: 402px;
+  height: 406px;
+  border-radius: 406px;
+  border: 60px solid #fffbf8;
+  position: absolute;
+  top: 0;
+  left: -550px;
+}
+.main-section-right-side-design {
+  width: 400px;
+  height: 400px;
+  border-radius: 406px;
+  border: 30px solid #fffbf8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100px;
+  top: 40%;
+  z-index: -1;
+}
+.main-section-center-side-design {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 406px;
+  border: 30px solid #fffbf8;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: 0;
+  margin-left: 25%;
+}
+
 /* responsive break points css */
+
+@media (max-width: 1100px) {
+  .slide-btn-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 @media (max-width: 800px) {
   .main {
     margin-top: 0;
+  }
+  .slide-btn-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 500px;
   }
   .slider-item {
     flex-direction: column;
